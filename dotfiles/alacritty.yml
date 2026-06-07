@@ -1,0 +1,53 @@
+env:
+  TERM: "xterm-256color"
+
+shell:
+  program: wsl.exe
+  args:
+    - -d
+    - Ubuntu
+    - --cd
+    - "~"
+
+font:
+  normal:
+    family: "MesloLGS NF"
+    style: Regular
+  bold:
+    family: "MesloLGS NF"
+    style: Bold
+  italic:
+    family: "MesloLGS NF"
+    style: Italic
+  size: 16.0
+
+window:
+  padding:
+    x: 10
+    y: 10
+  opacity: 0.90
+  decorations: full
+
+scrolling:
+  history: 10000
+
+colors:
+  primary:
+    background: '#011423'
+    foreground: '#CBE0F0'
+  normal:
+    black:   '#1b2a3b'
+    red:     '#fc5d7c'
+    green:   '#86e1fc'
+    yellow:  '#e2b86b'
+    blue:    '#7b97c2'
+    magenta: '#ee64ac'
+    cyan:    '#57d9c6'
+    white:   '#cbebf8'
+key_bindings:
+  # Copy / paste like a normal Windows app
+  - { key: C, mods: Control, action: Copy }
+  - { key: V, mods: Control, action: Paste }
+
+  # Keep a way to send real Ctrl+C (SIGINT) to programs
+  - { key: C, mods: Control|Shift, chars: "\x03" }
